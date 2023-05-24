@@ -4,6 +4,8 @@ strongswan_config_file:  "{{strongswan_prefix}}/ipsec.conf"
 strongswan_secrets_file: "{{strongswan_prefix}}/ipsec.secrets"
 strongswan_configure_extra_args: "--enable-systemd --enable-swanctl"
 charon_filelog: "/var/log/charon.log"
+systemd_config_file_path: /lib/systemd/system/strongswan.service
+systemd_restart_policy: always
 
 strongswan_config_setup:
   charondebug: 'dmn 2, mgr 2, ike 2, chd 2, job 2, cfg 2, knl 2, net 2, enc 2 lib 2'
