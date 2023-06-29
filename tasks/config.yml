@@ -65,4 +65,11 @@
     replace: 'install_routes = no'
   notify: ipsec restart
 
+  - name: Set restart policy
+    ini_file:
+      path: {{ systemd_config_file_path }}
+      section: Service
+      option: restart
+      value: {{ systemd_restart_policy }}
+
 # vi:ts=2:sw=2:et:ft=yaml
